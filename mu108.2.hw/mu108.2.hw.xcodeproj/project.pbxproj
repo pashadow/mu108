@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C40609A518C7C5F700B9FE0C /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C40609A418C7C5F700B9FE0C /* RegisterViewController.m */; };
 		C4E12C8D18BA640200272959 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4E12C8C18BA640200272959 /* Foundation.framework */; };
 		C4E12C8F18BA640200272959 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4E12C8E18BA640200272959 /* CoreGraphics.framework */; };
 		C4E12C9118BA640200272959 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4E12C9018BA640200272959 /* UIKit.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C40609A318C7C5F700B9FE0C /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		C40609A418C7C5F700B9FE0C /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		C4E12C8918BA640200272959 /* mu108.2.hw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mu108.2.hw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4E12C8C18BA640200272959 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C4E12C8E18BA640200272959 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -119,6 +122,8 @@
 				C4E12CBE18BA714600272959 /* Storyboard.storyboard */,
 				C4E12CC018BA7F4500272959 /* MainViewController.h */,
 				C4E12CC118BA7F4500272959 /* MainViewController.m */,
+				C40609A318C7C5F700B9FE0C /* RegisterViewController.h */,
+				C40609A418C7C5F700B9FE0C /* RegisterViewController.m */,
 			);
 			path = mu108.2.hw;
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 				C4E12C9D18BA640200272959 /* AppDelegate.m in Sources */,
 				C4E12C9918BA640200272959 /* main.m in Sources */,
 				C4E12CC218BA7F4500272959 /* MainViewController.m in Sources */,
+				C40609A518C7C5F700B9FE0C /* RegisterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

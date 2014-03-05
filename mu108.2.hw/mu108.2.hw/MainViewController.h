@@ -11,6 +11,6 @@
 @interface MainViewController : UIViewController
 - (IBAction)pressButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
-@property int clickCount;
+@property (nonatomic) int clickCount;
 
 @end

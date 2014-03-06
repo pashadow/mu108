@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>name</key>
-		<string>100</string>
+		<string>Харьков-Донецк</string>
 		<key>icon</key>
 		<string>bus</string>
 		<key>price</key>
@@ -12,7 +12,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>101</string>
+		<string>Харьков-Киев</string>
 		<key>icon</key>
 		<string>train</string>
 		<key>price</key>
@@ -20,7 +20,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>102</string>
+		<string>Харьков-Львов</string>
 		<key>icon</key>
 		<string>airplane</string>
 		<key>price</key>
@@ -28,7 +28,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>103</string>
+		<string>Работа-Дом</string>
 		<key>icon</key>
 		<string>taxi</string>
 		<key>price</key>
@@ -36,211 +36,11 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>104</string>
+		<string>Работа-Вокзал</string>
 		<key>icon</key>
 		<string>tram</string>
 		<key>price</key>
 		<string>0.50</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>100</string>
-		<key>icon</key>
-		<string>bus</string>
-		<key>price</key>
-		<string>1.25</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>100</string>
-		<key>icon</key>
-		<string>bus</string>
-		<key>price</key>
-		<string>1.25</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>100</string>
-		<key>icon</key>
-		<string>bus</string>
-		<key>price</key>
-		<string>1.25</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>100</string>
-		<key>icon</key>
-		<string>bus</string>
-		<key>price</key>
-		<string>1.25</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>100</string>
-		<key>icon</key>
-		<string>bus</string>
-		<key>price</key>
-		<string>1.25</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>100</string>
-		<key>icon</key>
-		<string>bus</string>
-		<key>price</key>
-		<string>1.25</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>100</string>
-		<key>icon</key>
-		<string>bus</string>
-		<key>price</key>
-		<string>1.25</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>100</string>
-		<key>icon</key>
-		<string>bus</string>
-		<key>price</key>
-		<string>1.25</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>100</string>
-		<key>icon</key>
-		<string>bus</string>
-		<key>price</key>
-		<string>1.25</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>100</string>
-		<key>icon</key>
-		<string>bus</string>
-		<key>price</key>
-		<string>1.25</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>100</string>
-		<key>icon</key>
-		<string>bus</string>
-		<key>price</key>
-		<string>1.25</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>100</string>
-		<key>icon</key>
-		<string>bus</string>
-		<key>price</key>
-		<string>1.25</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>100</string>
-		<key>icon</key>
-		<string>bus</string>
-		<key>price</key>
-		<string>1.25</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>100</string>
-		<key>icon</key>
-		<string>bus</string>
-		<key>price</key>
-		<string>1.25</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>100</string>
-		<key>icon</key>
-		<string>bus</string>
-		<key>price</key>
-		<string>1.25</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>100</string>
-		<key>icon</key>
-		<string>bus</string>
-		<key>price</key>
-		<string>1.25</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>100</string>
-		<key>icon</key>
-		<string>bus</string>
-		<key>price</key>
-		<string>1.25</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>100</string>
-		<key>icon</key>
-		<string>bus</string>
-		<key>price</key>
-		<string>1.25</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>100</string>
-		<key>icon</key>
-		<string>bus</string>
-		<key>price</key>
-		<string>1.25</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>100</string>
-		<key>icon</key>
-		<string>bus</string>
-		<key>price</key>
-		<string>1.25</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>100</string>
-		<key>icon</key>
-		<string>bus</string>
-		<key>price</key>
-		<string>1.25</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>100</string>
-		<key>icon</key>
-		<string>bus</string>
-		<key>price</key>
-		<string>1.25</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>100</string>
-		<key>icon</key>
-		<string>bus</string>
-		<key>price</key>
-		<string>1.25</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>100</string>
-		<key>icon</key>
-		<string>bus</string>
-		<key>price</key>
-		<string>1.25</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>100</string>
-		<key>icon</key>
-		<string>bus</string>
-		<key>price</key>
-		<string>1.25</string>
 	</dict>
 </array>
 </plist>

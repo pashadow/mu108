@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		C40609A518C7C5F700B9FE0C /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C40609A418C7C5F700B9FE0C /* RegisterViewController.m */; };
 		C490939B18C7E2A60042FD05 /* RouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C490939A18C7E2A60042FD05 /* RouteViewController.m */; };
-		C49093A018C877DB0042FD05 /* RouteInformation.plist in Resources */ = {isa = PBXBuildFile; fileRef = C490939F18C877DB0042FD05 /* RouteInformation.plist */; };
+		C49093A318CDD5AD0042FD05 /* RouteSidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = C49093A218CDD5AD0042FD05 /* RouteSidePanelController.m */; };
 		C4E12C8D18BA640200272959 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4E12C8C18BA640200272959 /* Foundation.framework */; };
 		C4E12C8F18BA640200272959 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4E12C8E18BA640200272959 /* CoreGraphics.framework */; };
 		C4E12C9118BA640200272959 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4E12C9018BA640200272959 /* UIKit.framework */; };
@@ -43,7 +43,8 @@
 		C40609A418C7C5F700B9FE0C /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		C490939918C7E2A60042FD05 /* RouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteViewController.h; sourceTree = "<group>"; };
 		C490939A18C7E2A60042FD05 /* RouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteViewController.m; sourceTree = "<group>"; };
-		C490939F18C877DB0042FD05 /* RouteInformation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RouteInformation.plist; sourceTree = "<group>"; };
+		C49093A118CDD5AD0042FD05 /* RouteSidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteSidePanelController.h; sourceTree = "<group>"; };
+		C49093A218CDD5AD0042FD05 /* RouteSidePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteSidePanelController.m; sourceTree = "<group>"; };
 		C4E12C8918BA640200272959 /* mu108.2.hw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mu108.2.hw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4E12C8C18BA640200272959 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C4E12C8E18BA640200272959 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -137,7 +138,8 @@
 				C40609A418C7C5F700B9FE0C /* RegisterViewController.m */,
 				C490939918C7E2A60042FD05 /* RouteViewController.h */,
 				C490939A18C7E2A60042FD05 /* RouteViewController.m */,
-				C490939F18C877DB0042FD05 /* RouteInformation.plist */,
+				C49093A118CDD5AD0042FD05 /* RouteSidePanelController.h */,
+				C49093A218CDD5AD0042FD05 /* RouteSidePanelController.m */,
 			);
 			path = mu108.2.hw;
 			sourceTree = "<group>";
@@ -249,7 +251,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4E12C9718BA640200272959 /* InfoPlist.strings in Resources */,
-				C49093A018C877DB0042FD05 /* RouteInformation.plist in Resources */,
 				C4E12C9F18BA640200272959 /* Images.xcassets in Resources */,
 				C4E12CBF18BA714600272959 /* Storyboard.storyboard in Resources */,
 			);
@@ -304,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4E12C9D18BA640200272959 /* AppDelegate.m in Sources */,
+				C49093A318CDD5AD0042FD05 /* RouteSidePanelController.m in Sources */,
 				C4E12C9918BA640200272959 /* main.m in Sources */,
 				C490939B18C7E2A60042FD05 /* RouteViewController.m in Sources */,
 				C4E12CC218BA7F4500272959 /* MainViewController.m in Sources */,

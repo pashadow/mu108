@@ -7,10 +7,12 @@
 //
 
 #import "RouteViewController.h"
+#import <AFNetworking.h>
+#import <MBProgressHUD.h>
 
 @interface RouteViewController ()
 
-@property (nonatomic, strong) NSArray* tableData;
+@property (nonatomic, strong) NSArray* routeData;
 @end
 
 @implementation RouteViewController
@@ -18,9 +20,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"RouteInformation" ofType:@"plist"];
-    self.tableData = [[NSArray alloc] initWithContentsOfFile:plistPath];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:@"http://marshrutki.com.ua/mu/routes.php" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        self.routeData = (NSArray*) responseObject;
+        [self.tableView reloadData];
+        [MBProgressHUD hideAllHUDsForView:self.tableView animated:YES];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+        [MBProgressHUD hideAllHUDsForView:self.tableView animated:YES];
+    }];
+    
+    [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,7 +45,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.tableData count];
+    return [self.routeData count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -42,16 +53,15 @@
     static NSString *CellIdentifier = @"BasicCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    NSDictionary *record = [self.tableData objectAtIndex:indexPath.row];
-    cell.imageView.image = [UIImage imageNamed:[record objectForKey:@"icon"]];
-    cell.textLabel.text = [record objectForKey:@"name"];
-    cell.detailTextLabel.text = [record objectForKey:@"price"];
+    NSDictionary *record = [self.routeData objectAtIndex:indexPath.row];
+    cell.textLabel.text = [record objectForKey:@"route_title"];
+    cell.detailTextLabel.text = [record objectForKey:@"route_price"];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Selected route name:%@", [[self.tableData objectAtIndex:indexPath.row] objectForKey:@"name"]);
+    NSLog(@"Selected route name:%@", [[self.routeData objectAtIndex:indexPath.row] objectForKey:@"route_title"]);
 }
 
 /*

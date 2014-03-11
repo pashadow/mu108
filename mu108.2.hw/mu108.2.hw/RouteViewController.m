@@ -34,6 +34,11 @@
     [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 20.f;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

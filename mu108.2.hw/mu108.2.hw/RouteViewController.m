@@ -7,8 +7,9 @@
 //
 
 #import "RouteViewController.h"
-#import <AFNetworking.h>
 #import <MBProgressHUD.h>
+#import "MUAPI.h"
+#import "Route.h"
 
 @interface RouteViewController ()
 
@@ -21,14 +22,14 @@
 {
     [super viewDidLoad];
     
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://marshrutki.com.ua/mu/routes.php" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        self.routeData = (NSArray*) responseObject;
+    [[MUAPI sharedClient] getRoutes:^(NSArray *routes, NSError *error) {
+        [MBProgressHUD hideAllHUDsForView:self.tableView animated:YES];
+        if (error) {
+            NSLog(@"Error: %@", error);
+            return;
+        }
+        self.routeData = routes;
         [self.tableView reloadData];
-        [MBProgressHUD hideAllHUDsForView:self.tableView animated:YES];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-        [MBProgressHUD hideAllHUDsForView:self.tableView animated:YES];
     }];
     
     [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
@@ -58,15 +59,16 @@
     static NSString *CellIdentifier = @"BasicCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    NSDictionary *record = [self.routeData objectAtIndex:indexPath.row];
-    cell.textLabel.text = [record objectForKey:@"route_title"];
-    cell.detailTextLabel.text = [record objectForKey:@"route_price"];
+    Route *route = [self.routeData objectAtIndex:indexPath.row];
+    cell.textLabel.text = route.title;
+    cell.detailTextLabel.text = route.price;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Selected route name:%@", [[self.routeData objectAtIndex:indexPath.row] objectForKey:@"route_title"]);
+    Route *route = [self.routeData objectAtIndex:indexPath.row];
+    NSLog(@"Selected route name:%@, price:%@", route.title, route.price);
 }
 
 /*

@@ -7,7 +7,6 @@
 //
 
 #import "MUAPI.h"
-#import <AFNetworking.h>
 #import "Route.h"
 
 @implementation MUAPI
@@ -19,14 +18,13 @@
     static dispatch_once_t onceToken = 0;
     dispatch_once(&onceToken, ^{
         _sharedClient = [[self alloc] init];
+        _sharedClient.defaultRequestOperationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:API_HOST]];
     });
     return _sharedClient;
 }
 
 -(void)getRoutes:(void (^)(NSArray *, NSError *))block
 {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    
     void (^successBlock)(AFHTTPRequestOperation*, id) = ^(AFHTTPRequestOperation *operation, id responseObject) {
         NSMutableArray* routeData = [NSMutableArray array];
         for (NSDictionary *dicRoute in responseObject) {
@@ -42,8 +40,7 @@
         block(nil, error);
     };
     
-    [manager GET:[NSString stringWithFormat:@"%@%@", API_HOST, API_ROUTES_PATH] parameters:nil success:successBlock failure:failBlock];
-    
+    [self.defaultRequestOperationManager GET:API_ROUTES_PATH parameters:nil success:successBlock failure:failBlock];
 }
 
 @end

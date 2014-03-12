@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AFNetworking.h>
 #import "Config.h"
 
 @interface MUAPI : NSObject
 
-+(instancetype)sharedClient;
+@property (nonatomic, strong) AFHTTPRequestOperationManager *defaultRequestOperationManager;
 
++(instancetype)sharedClient;
 -(void)getRoutes:(void (^)(NSArray *routes, NSError *error))block;
 
 @end

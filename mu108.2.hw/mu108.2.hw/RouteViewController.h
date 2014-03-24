@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
-@interface RouteViewController : UITableViewController
+@interface RouteViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+
+@property (strong, nonatomic) NSManagedObjectContext* context;
+@property (strong, nonatomic) NSFetchedResultsController* resultsController;
 
 @end

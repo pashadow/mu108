@@ -7,7 +7,9 @@
 //
 
 #import "MUAPI.h"
+#import <CoreData/CoreData.h>
 #import "Route.h"
+#import "AppDelegate.h"
 
 @implementation MUAPI
 
@@ -19,25 +21,38 @@
     dispatch_once(&onceToken, ^{
         _sharedClient = [[self alloc] init];
         _sharedClient.defaultRequestOperationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:API_HOST]];
+
+        AppDelegate* appDelegate = (AppDelegate* )[UIApplication sharedApplication].delegate;
+        _sharedClient.context = appDelegate.context;
     });
+ 
     return _sharedClient;
 }
 
--(void)getRoutes:(void (^)(NSArray *, NSError *))block
+
+-(void)getRoutes:(void (^)(NSError *))block
 {
     void (^successBlock)(AFHTTPRequestOperation*, id) = ^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSMutableArray* routeData = [NSMutableArray array];
-        for (NSDictionary *dicRoute in responseObject) {
-            Route *route = [[Route alloc] init];
-            route.title = dicRoute[@"route_title"];
-            route.price = dicRoute[@"route_price"];
-            [routeData addObject:route];
+        for (NSDictionary* dictionary in responseObject) {
+            //Bus* bus = [NSEntityDescription insertNewObjectForEntityForName:@"Bus" inManagedObjectContext:self.context];
+            //bus.name = @"415";
+            Route* route = [NSEntityDescription insertNewObjectForEntityForName:@"Route" inManagedObjectContext:self.context];
+            route.name = dictionary[@"route_title"];
+            route.price = [NSNumber numberWithFloat:[dictionary[@"route_price"] floatValue]];
+            //[route addBusesObject:bus];
+            NSError* error;
+            [self.context save:&error];
+             
+            if (error) {
+                NSLog(@"%@", error);
+            }
+            
         };
-        block([NSArray arrayWithArray:routeData], nil);
+        block(nil);
     };
     
     void (^failBlock)(AFHTTPRequestOperation*, NSError*) = ^(AFHTTPRequestOperation *operation, NSError *error) {
-        block(nil, error);
+        block(error);
     };
     
     [self.defaultRequestOperationManager GET:API_ROUTES_PATH parameters:nil success:successBlock failure:failBlock];

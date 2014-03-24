@@ -13,8 +13,9 @@
 @interface MUAPI : NSObject
 
 @property (nonatomic, strong) AFHTTPRequestOperationManager *defaultRequestOperationManager;
+@property (strong, nonatomic) NSManagedObjectContext* context;
 
 +(instancetype)sharedClient;
--(void)getRoutes:(void (^)(NSArray *routes, NSError *error))block;
+-(void)getRoutes:(void (^)(NSError *error))block;
 
 @end

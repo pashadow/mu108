@@ -15,6 +15,14 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * price;
 @property (nonatomic, retain) NSSet *buses;
+@property (nonatomic) int32_t identifier;
+
++ (Route *)routeWithIdentifier:(int32_t)identifier inManagedObjectContext:(NSManagedObjectContext *)context error:(NSError **)error;
++ (NSSet *)updatedRoutesWithArrayOfDictionaries:(NSArray *)dictionaries
+                                      predicate:(NSPredicate *)predicate
+                           managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
+
+
 @end
 
 @interface Route (CoreDataGeneratedAccessors)

@@ -33,21 +33,8 @@
 -(void)getRoutes:(void (^)(NSError *))block
 {
     void (^successBlock)(AFHTTPRequestOperation*, id) = ^(AFHTTPRequestOperation *operation, id responseObject) {
-        for (NSDictionary* dictionary in responseObject) {
-            //Bus* bus = [NSEntityDescription insertNewObjectForEntityForName:@"Bus" inManagedObjectContext:self.context];
-            //bus.name = @"415";
-            Route* route = [NSEntityDescription insertNewObjectForEntityForName:@"Route" inManagedObjectContext:self.context];
-            route.name = dictionary[@"route_title"];
-            route.price = [NSNumber numberWithFloat:[dictionary[@"route_price"] floatValue]];
-            //[route addBusesObject:bus];
-            NSError* error;
-            [self.context save:&error];
-             
-            if (error) {
-                NSLog(@"%@", error);
-            }
-            
-        };
+        
+        [Route updatedRoutesWithArrayOfDictionaries:responseObject predicate:nil managedObjectContext:self.context];
         block(nil);
     };
     

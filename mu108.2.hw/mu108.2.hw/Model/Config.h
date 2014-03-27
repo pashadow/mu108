@@ -10,6 +10,6 @@
 #define mu108_2_hw_Config_h
 
 #define API_HOST @"http://marshrutki.com.ua/mu/"
-#define API_ROUTES_PATH @"routes.php"
+#define API_ROUTES_PATH @"routes"
 
 #endif

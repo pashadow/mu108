@@ -27,6 +27,11 @@
     self.context = [[NSManagedObjectContext alloc] init];
     self.context.persistentStoreCoordinator = self.coordinator;
     
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    
+    [self.locationManager startUpdatingLocation];
+    
     return YES;
 }
 
@@ -48,6 +53,18 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+}
+
+#pragma mark - CLLocationManager delegate
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    CLLocation* location = [locations lastObject];
+    NSLog(@"Current location: %@", location);
+    [self.locationManager stopUpdatingLocation];
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    NSLog(@"%@", error);
 }
 
 @end

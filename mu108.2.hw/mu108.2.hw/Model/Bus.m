@@ -15,4 +15,11 @@
 @dynamic name;
 @dynamic route;
 
+-(CLLocationCoordinate2D) coordinate {
+    return CLLocationCoordinate2DMake(50.005791, 36.230925);
+}
+-(NSString*) title {
+    return self.name;
+}
+
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "MUAPI.h"
-#import <CoreData/CoreData.h>
 #import "Route.h"
 #import "AppDelegate.h"
 
@@ -33,7 +32,7 @@
 -(void)getRoutes:(void (^)(NSError *))block
 {
     void (^successBlock)(AFHTTPRequestOperation*, id) = ^(AFHTTPRequestOperation *operation, id responseObject) {
-        
+        //NSLog(@"%@", responseObject);
         [Route updatedRoutesWithArrayOfDictionaries:responseObject predicate:nil managedObjectContext:self.context];
         block(nil);
     };

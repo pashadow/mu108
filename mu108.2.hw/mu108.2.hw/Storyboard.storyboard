@@ -60,10 +60,10 @@
             </objects>
             <point key="canvasLocation" x="893" y="2192"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="s6w-v1-aDk">
             <objects>
-                <viewController id="k76-RJ-5Dw" sceneMemberID="viewController">
+                <viewController id="k76-RJ-5Dw" customClass="MapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Emv-Y1-Bqz"/>
                         <viewControllerLayoutGuide type="bottom" id="9ND-Sd-r2i"/>
@@ -71,13 +71,31 @@
                     <view key="view" contentMode="scaleToFill" id="yAM-CY-2wJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nt8-d6-Njn">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="k76-RJ-5Dw" id="g2q-sV-r93"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nt8-d6-Njn" firstAttribute="leading" secondItem="yAM-CY-2wJ" secondAttribute="leading" id="CSf-Ui-sF7"/>
+                            <constraint firstItem="nt8-d6-Njn" firstAttribute="top" secondItem="yAM-CY-2wJ" secondAttribute="top" id="D2h-tX-dN8"/>
+                            <constraint firstAttribute="trailing" secondItem="nt8-d6-Njn" secondAttribute="trailing" id="KqK-s5-KDQ"/>
+                            <constraint firstItem="9ND-Sd-r2i" firstAttribute="top" secondItem="nt8-d6-Njn" secondAttribute="bottom" id="bbZ-g2-OZe"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="es6-6I-0fZ"/>
+                    <connections>
+                        <outlet property="mapView" destination="nt8-d6-Njn" id="RuO-OU-Tmw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1eE-ie-yCy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1421" y="2192"/>
+            <point key="canvasLocation" x="1409" y="2192"/>
         </scene>
         <!--Route Side Panel Controller-->
         <scene sceneID="NAc-1n-e7V">

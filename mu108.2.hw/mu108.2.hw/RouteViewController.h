@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreData/CoreData.h>
+#import "Model/Route.h"
+
+@protocol RouteViewDelegate <NSObject>
+
+- (void)didSelectRoute:(Route*)route;
+
+@end
 
 @interface RouteViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
+@property (weak, nonatomic) id<RouteViewDelegate> routeDelegate;
 @property (strong, nonatomic) NSManagedObjectContext* context;
 @property (strong, nonatomic) NSFetchedResultsController* resultsController;
 

@@ -152,6 +152,10 @@
 		B4D60F8F221642EB9C1D1C9A /* Pods-JASidePanels.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JASidePanels.xcconfig"; sourceTree = "<group>"; };
 		BE3910AD9F2B4B9DB16F0033 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		C282EB9645DA459B9A70F33F /* libPods-JASidePanels.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JASidePanels.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C47DC96C18E65014007C24B3 /* PathPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PathPoint.h; path = ../mu108.2.hw/Model/PathPoint.h; sourceTree = "<group>"; };
+		C47DC96D18E65014007C24B3 /* PathPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PathPoint.m; path = ../mu108.2.hw/Model/PathPoint.m; sourceTree = "<group>"; };
+		C493ABD618E64EC60063D3E8 /* Point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Point.h; path = ../mu108.2.hw/Model/Point.h; sourceTree = "<group>"; };
+		C493ABD718E64EC60063D3E8 /* Point.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Point.m; path = ../mu108.2.hw/Model/Point.m; sourceTree = "<group>"; };
 		C74CEA10DDEF47FEB0E0739E /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
 		CFA4115CE24746C8AC771944 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		D111465C502B464CBB945615 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
@@ -301,6 +305,10 @@
 		51BC1D21A5F54FA888A958B8 = {
 			isa = PBXGroup;
 			children = (
+				C47DC96C18E65014007C24B3 /* PathPoint.h */,
+				C47DC96D18E65014007C24B3 /* PathPoint.m */,
+				C493ABD618E64EC60063D3E8 /* Point.h */,
+				C493ABD718E64EC60063D3E8 /* Point.m */,
 				E43AFB0341B14080BBF83F7C /* Podfile */,
 				264E04BF42634C25982EE795 /* Frameworks */,
 				F6CD25E4725C49EFAFAA8985 /* Pods */,

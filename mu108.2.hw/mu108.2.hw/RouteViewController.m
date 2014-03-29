@@ -86,13 +86,16 @@
     
     Route* route = (Route*)[self.resultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = route.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", route.price];
+    cell.detailTextLabel.text = route.specification; //[NSString stringWithFormat:@"%@", route.price];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Selected route index:%@", indexPath);
+    if ([self.routeDelegate respondsToSelector:@selector(didSelectRoute:)]) {
+        Route* route = (Route*)[self.resultsController objectAtIndexPath:indexPath];
+        [self.routeDelegate didSelectRoute:route];
+    }
 }
 
 #pragma mark - Result delegate

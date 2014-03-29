@@ -2,19 +2,23 @@
 //  Route.m
 //  mu108.2.hw
 //
-//  Created by Pavel on 24.03.14.
+//  Created by Pavel on 29.03.14.
 //  Copyright (c) 2014 Pavel. All rights reserved.
 //
 
 #import "Route.h"
+#import "Bus.h"
+#import "PathPoint.h"
 
 
 @implementation Route
 
+@dynamic identifier;
 @dynamic name;
 @dynamic price;
+@dynamic specification;
 @dynamic buses;
-@dynamic identifier;
+@dynamic points;
 
 + (Route *)routeWithIdentifier:(int32_t)identifier inManagedObjectContext:(NSManagedObjectContext *)context error:(NSError **)error
 {
@@ -63,7 +67,7 @@
         }
         
         // заполняем либо обновляем данные маршрута
-        [route configureWithDictionary:dictionary];
+        [route configureWithDictionary:dictionary managedObjectContext:managedObjectContext];
         [routes addObject:route];
     }
     
@@ -75,10 +79,24 @@
     return routes;
 }
 
-- (void)configureWithDictionary:(NSDictionary *)params
+- (void)configureWithDictionary:(NSDictionary *)params managedObjectContext:(NSManagedObjectContext *)managedObjectContext
 {
     self.name  = [params objectForKey:@"route_title"];
     self.price = @([[params objectForKey:@"route_price"] floatValue]);
+    self.specification = [params objectForKey:@"route_description"];
+    NSString* path = [params objectForKey:@"route_path"];
+    NSData* jsonData = [path dataUsingEncoding:NSUTF8StringEncoding];
+    NSError* error;
+    NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
+    NSMutableSet* points = [[NSMutableSet alloc] init];
+    for (NSDictionary* element in jsonArray) {
+        PathPoint* point = [NSEntityDescription insertNewObjectForEntityForName:@"PathPoint" inManagedObjectContext:managedObjectContext];
+        point.x = @([[element objectForKey:@"x"] floatValue]);
+        point.y= @([[element objectForKey:@"y"] floatValue]);
+        point.z = @([[element objectForKey:@"z"] floatValue]);
+        [points addObject:point];
+    }
+    self.points = [[NSSet alloc]initWithSet:points];
 }
 
 @end

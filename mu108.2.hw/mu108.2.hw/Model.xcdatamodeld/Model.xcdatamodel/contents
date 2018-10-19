@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="12F45" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Bus" representedClassName="Bus" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="route" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Route" inverseName="buses" inverseEntity="Route" syncable="YES"/>
+    </entity>
+    <entity name="PathPoint" representedClassName="PathPoint" syncable="YES">
+        <attribute name="x" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="y" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="z" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="route" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Route" inverseName="points" inverseEntity="Route" syncable="YES"/>
+    </entity>
+    <entity name="Route" representedClassName="Route" syncable="YES">
+        <attribute name="identifier" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="specification" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="buses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bus" inverseName="route" inverseEntity="Bus" syncable="YES"/>
+        <relationship name="points" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PathPoint" inverseName="route" inverseEntity="PathPoint" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Bus" positionX="250" positionY="-63" width="128" height="73"/>
+        <element name="PathPoint" positionX="108" positionY="18" width="128" height="103"/>
+        <element name="Route" positionX="-63" positionY="-18" width="128" height="133"/>
+    </elements>
+</model>
